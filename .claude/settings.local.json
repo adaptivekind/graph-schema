@@ -1,6 +1,10 @@
 {
   "permissions": {
-    "allow": ["Bash(npm run build:*)", "Bash(npm test)"],
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm test)",
+      "Bash(npm run generate-json-schema:*)"
+    ],
     "deny": []
   }
 }
