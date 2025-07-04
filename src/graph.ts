@@ -3,7 +3,7 @@ import { Link } from "./link";
 
 export interface Graph {
   id?: string;
-  title?: string;
+  label?: string;
   nodes: Record<string, Node>;
   links: Link[];
 }

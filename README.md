@@ -25,10 +25,10 @@ import { Graph, Node, Link } from "./src/index";
 
 const graph: Graph = {
   id: "my-graph",
-  title: "Sample Graph",
+  label: "Sample Graph",
   nodes: {
     user1: {
-      title: "Alice",
+      label: "Alice",
       type: "person",
       meta: {
         department: "engineering",
@@ -38,7 +38,7 @@ const graph: Graph = {
       },
     },
     user2: {
-      title: "Bob",
+      label: "Bob",
       type: "person",
     },
   },
@@ -63,7 +63,7 @@ const graph: Graph = {
 
 ```typescript
 interface Node {
-  title?: string; // Display name
+  label?: string; // Display name
   type?: string; // Node category/type
   aliases?: Array<string>; // Alternative names
   value?: number; // Numeric value
@@ -92,7 +92,7 @@ interface Link {
 ```typescript
 interface Graph {
   id?: string; // Graph identifier
-  title?: string; // Graph title
+  label?: string; // Graph label
   nodes: Record<string, Node>; // Nodes keyed by ID
   links: Link[]; // Array of links
 }

@@ -8,6 +8,9 @@
         "id": {
           "type": "string"
         },
+        "label": {
+          "type": "string"
+        },
         "links": {
           "items": {
             "$ref": "#/definitions/Link"
@@ -19,9 +22,6 @@
             "$ref": "#/definitions/Node"
           },
           "type": "object"
-        },
-        "title": {
-          "type": "string"
         }
       },
       "required": ["nodes", "links"],
@@ -73,14 +73,14 @@
           },
           "type": "array"
         },
+        "label": {
+          "type": "string"
+        },
         "meta": {
           "additionalProperties": {
             "type": "string"
           },
           "type": "object"
-        },
-        "title": {
-          "type": "string"
         },
         "type": {
           "type": "string"
