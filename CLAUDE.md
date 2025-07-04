@@ -22,11 +22,12 @@ This is a TypeScript library that provides type definitions for graph data struc
 The project is organized with TypeScript source files in `src/`:
 
 - `src/node.ts` - Node/vertex type definitions
-- `src/link.ts` - Link/edge type definitions  
+- `src/link.ts` - Link/edge type definitions
 - `src/graph.ts` - Main graph type definitions
 - `src/index.ts` - Main export file
 
 Key types exported:
+
 - `GraphNode` - Individual graph nodes with optional data and metadata
 - `GraphLink` - Connections between nodes with support for directed/undirected
 - `Graph` - Complete graph structure containing nodes and links

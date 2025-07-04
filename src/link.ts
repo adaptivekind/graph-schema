@@ -1,4 +1,4 @@
-import { NodeId } from './node';
+import { NodeId } from "./node";
 
 export interface GraphLink<T = any> {
   id: string;
