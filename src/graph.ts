@@ -18,21 +18,3 @@ export interface UndirectedGraph<NodeData = any, LinkData = any>
   extends Graph<NodeData, LinkData> {
   directed: false;
 }
-
-export interface GraphStatistics {
-  nodeCount: number;
-  linkCount: number;
-  density: number;
-  isConnected: boolean;
-  hasCycles: boolean;
-}
-
-export interface GraphMetadata {
-  name?: string;
-  description?: string;
-  version?: string;
-  createdAt?: string;
-  updatedAt?: string;
-  author?: string;
-  tags?: string[];
-}

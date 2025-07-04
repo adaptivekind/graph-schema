@@ -5,62 +5,32 @@
   "nodes": [
     {
       "id": "alice",
-      "label": "Alice",
-      "data": {
-        "age": 30,
-        "role": "developer"
-      }
+      "label": "Alice"
     },
     {
       "id": "bob",
-      "label": "Bob",
-      "data": {
-        "age": 25,
-        "role": "designer"
-      }
+      "label": "Bob"
     },
     {
       "id": "charlie",
-      "label": "Charlie",
-      "data": {
-        "age": 35,
-        "role": "manager"
-      }
+      "label": "Charlie"
     }
   ],
   "links": [
     {
       "id": "link1",
       "source": "alice",
-      "target": "bob",
-      "label": "friends",
-      "weight": 0.8,
-      "directed": false,
-      "data": {
-        "since": "2020-01-15"
-      }
+      "target": "bob"
     },
     {
       "id": "link2",
       "source": "bob",
-      "target": "charlie",
-      "label": "colleagues",
-      "weight": 0.6,
-      "directed": false,
-      "data": {
-        "since": "2021-03-10"
-      }
+      "target": "charlie"
     },
     {
       "id": "link3",
       "source": "alice",
-      "target": "charlie",
-      "label": "reports_to",
-      "weight": 1.0,
-      "directed": true,
-      "data": {
-        "since": "2019-06-01"
-      }
+      "target": "charlie"
     }
   ]
 }

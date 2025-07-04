@@ -10,10 +10,4 @@ export type {
   UndirectedLink,
   LinkId,
 } from "./link";
-export type {
-  Graph,
-  DirectedGraph,
-  UndirectedGraph,
-  GraphStatistics,
-  GraphMetadata,
-} from "./graph";
+export type { Graph, DirectedGraph, UndirectedGraph } from "./graph";
