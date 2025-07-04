@@ -5,6 +5,9 @@
       "title": "Alice",
       "weights": {
         "value": 2
+      },
+      "meta": {
+        "type": "person"
       }
     },
     {
@@ -23,6 +26,9 @@
       "target": "bob",
       "weights": {
         "value": 2
+      },
+      "meta": {
+        "type": "friendship"
       }
     },
     {

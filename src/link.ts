@@ -6,6 +6,7 @@ export interface Link {
   label?: string;
   value?: number;
   weights?: Record<string, number>;
+  meta?: Record<string, string>;
 }
 
 export enum LinkType {
