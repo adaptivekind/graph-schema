@@ -24,6 +24,9 @@
     "GraphLink": {
       "additionalProperties": false,
       "properties": {
+        "id": {
+          "type": "string"
+        },
         "label": {
           "type": "string"
         },
@@ -32,6 +35,12 @@
         },
         "target": {
           "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/LinkType"
+        },
+        "value": {
+          "type": "number"
         }
       },
       "required": ["source", "target"],
@@ -40,15 +49,37 @@
     "GraphNode": {
       "additionalProperties": false,
       "properties": {
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "id": {
           "type": "string"
         },
-        "label": {
+        "title": {
           "type": "string"
+        },
+        "value": {
+          "type": "number"
         }
       },
       "required": ["id"],
       "type": "object"
+    },
+    "LinkType": {
+      "enum": [
+        "to",
+        "from",
+        "has",
+        "in",
+        "child",
+        "implicit",
+        "implicitFrom",
+        "implicitAlias"
+      ],
+      "type": "string"
     }
   }
 }
