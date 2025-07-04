@@ -2,15 +2,15 @@
   "nodes": [
     {
       "id": "alice",
-      "label": "Alice"
+      "title": "Alice"
     },
     {
       "id": "bob",
-      "label": "Bob"
+      "title": "Bob"
     },
     {
       "id": "charlie",
-      "label": "Charlie"
+      "title": "Charlie"
     }
   ],
   "links": [
