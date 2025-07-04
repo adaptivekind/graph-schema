@@ -7,7 +7,7 @@ describe("Graph schema validation", () => {
   test("should be able to create graph from interface", () => {
     const graph: Graph = {
       id: "test-graph-1",
-      title: "Test Graph Example",
+      label: "Test Graph Example",
       nodes: {
         "name-1": {
           weights: {
@@ -19,7 +19,7 @@ describe("Graph schema validation", () => {
           },
         },
         "name-2": {
-          title: "Name 2",
+          label: "Name 2",
         },
       },
       links: [
@@ -32,12 +32,12 @@ describe("Graph schema validation", () => {
     };
 
     expect(graph.id).toBe("test-graph-1");
-    expect(graph.title).toBe("Test Graph Example");
+    expect(graph.label).toBe("Test Graph Example");
     expect(graph.nodes["name-1"]).toEqual(
       expect.objectContaining({ type: "person" }),
     );
     expect(graph.nodes["name-2"]).toEqual(
-      expect.objectContaining({ title: "Name 2" }),
+      expect.objectContaining({ label: "Name 2" }),
     );
   });
 
@@ -50,19 +50,19 @@ describe("Graph schema validation", () => {
     expect(validate.errors).toBeNull();
     expect(isValid).toBe(true);
     expect(testGraph.id).toBe("social-network-graph");
-    expect(testGraph.title).toBe("Sample Social Network Graph");
+    expect(testGraph.label).toBe("Sample Social Network Graph");
     expect(typeof testGraph.nodes).toBe("object");
     expect(Array.isArray(testGraph.links)).toBe(true);
     expect(Object.keys(testGraph.nodes).length).toBe(3);
     expect(testGraph.links.length).toBe(3);
     expect(testGraph.nodes["alice"]).toEqual(
-      expect.objectContaining({ title: "Alice" }),
+      expect.objectContaining({ label: "Alice" }),
     );
     expect(testGraph.nodes["bob"]).toEqual(
-      expect.objectContaining({ title: "Bob" }),
+      expect.objectContaining({ label: "Bob" }),
     );
     expect(testGraph.nodes["charlie"]).toEqual(
-      expect.objectContaining({ title: "Charlie" }),
+      expect.objectContaining({ label: "Charlie" }),
     );
   });
 });

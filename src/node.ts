@@ -1,5 +1,5 @@
 export interface Node {
-  title?: string;
+  label?: string;
   type?: string;
   aliases?: Array<string>;
   value?: number;
