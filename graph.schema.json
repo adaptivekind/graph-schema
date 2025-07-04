@@ -43,7 +43,7 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/LinkType"
+          "type": "string"
         },
         "value": {
           "type": "number"
@@ -57,19 +57,6 @@
       },
       "required": ["source", "target"],
       "type": "object"
-    },
-    "LinkType": {
-      "enum": [
-        "to",
-        "from",
-        "has",
-        "in",
-        "child",
-        "implicit",
-        "implicitFrom",
-        "implicitAlias"
-      ],
-      "type": "string"
     },
     "Node": {
       "additionalProperties": false,
@@ -90,6 +77,9 @@
           "type": "object"
         },
         "title": {
+          "type": "string"
+        },
+        "type": {
           "type": "string"
         },
         "value": {

@@ -1,21 +1,10 @@
 export interface Link {
   id?: string;
   source: string;
-  type?: LinkType;
+  type?: string;
   target: string;
   label?: string;
   value?: number;
   weights?: Record<string, number>;
   meta?: Record<string, string>;
-}
-
-export enum LinkType {
-  To = "to",
-  From = "from",
-  Has = "has",
-  In = "in",
-  Child = "child",
-  ImplicitTo = "implicit",
-  ImplicitFrom = "implicitFrom",
-  ImplicitAlias = "implicitAlias",
 }
