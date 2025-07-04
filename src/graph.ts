@@ -1,5 +1,5 @@
-import { GraphNode } from './node';
-import { GraphLink } from './link';
+import { GraphNode } from "./node";
+import { GraphLink } from "./link";
 
 export interface Graph<NodeData = any, LinkData = any> {
   id?: string;
@@ -10,11 +10,13 @@ export interface Graph<NodeData = any, LinkData = any> {
   metadata?: Record<string, any>;
 }
 
-export interface DirectedGraph<NodeData = any, LinkData = any> extends Graph<NodeData, LinkData> {
+export interface DirectedGraph<NodeData = any, LinkData = any>
+  extends Graph<NodeData, LinkData> {
   directed: true;
 }
 
-export interface UndirectedGraph<NodeData = any, LinkData = any> extends Graph<NodeData, LinkData> {
+export interface UndirectedGraph<NodeData = any, LinkData = any>
+  extends Graph<NodeData, LinkData> {
   directed: false;
 }
 
