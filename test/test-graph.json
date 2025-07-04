@@ -2,7 +2,10 @@
   "nodes": [
     {
       "id": "alice",
-      "title": "Alice"
+      "title": "Alice",
+      "weights": {
+        "value": 2
+      }
     },
     {
       "id": "bob",
@@ -17,7 +20,10 @@
     {
       "id": "link1",
       "source": "alice",
-      "target": "bob"
+      "target": "bob",
+      "weights": {
+        "value": 2
+      }
     },
     {
       "id": "link2",
