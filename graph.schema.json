@@ -41,6 +41,12 @@
         },
         "value": {
           "type": "number"
+        },
+        "weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
         }
       },
       "required": ["source", "target"],
