@@ -30,6 +30,12 @@
         "label": {
           "type": "string"
         },
+        "meta": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
         "source": {
           "type": "string"
         },
@@ -76,6 +82,12 @@
         },
         "id": {
           "type": "string"
+        },
+        "meta": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
         },
         "title": {
           "type": "string"
