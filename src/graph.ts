@@ -7,7 +7,6 @@ export interface Graph<NodeData = any, LinkData = any> {
   nodes: GraphNode<NodeData>[];
   links: GraphLink<LinkData>[];
   directed?: boolean;
-  metadata?: Record<string, any>;
 }
 
 export interface DirectedGraph<NodeData = any, LinkData = any>
