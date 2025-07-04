@@ -9,6 +9,9 @@ describe("Graph schema validation", () => {
       nodes: [
         {
           id: "name-1",
+          weights: {
+            value: 1,
+          },
         },
         {
           id: "name-2",
@@ -22,7 +25,9 @@ describe("Graph schema validation", () => {
       ],
     };
 
-    expect(graph.nodes).toEqual(expect.arrayContaining([{ id: "name-1" }]));
+    expect(graph.nodes).toEqual(
+      expect.arrayContaining([expect.objectContaining({ id: "name-1" })]),
+    );
   });
 
   test("should import JSON file and validate against Graph type", () => {

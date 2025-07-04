@@ -76,6 +76,12 @@
         },
         "value": {
           "type": "number"
+        },
+        "weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
         }
       },
       "required": ["id"],

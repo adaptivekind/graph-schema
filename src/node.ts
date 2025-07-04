@@ -3,4 +3,5 @@ export interface Node {
   title?: string;
   aliases?: Array<string>;
   value?: number;
+  weights?: Record<string, number>;
 }
