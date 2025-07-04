@@ -1,0 +1,54 @@
+{
+  "$ref": "#/definitions/Graph",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Graph": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/definitions/GraphLink"
+          },
+          "type": "array"
+        },
+        "nodes": {
+          "items": {
+            "$ref": "#/definitions/GraphNode"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["nodes", "links"],
+      "type": "object"
+    },
+    "GraphLink": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        }
+      },
+      "required": ["source", "target"],
+      "type": "object"
+    },
+    "GraphNode": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": ["id"],
+      "type": "object"
+    }
+  }
+}
