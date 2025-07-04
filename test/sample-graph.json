@@ -1,7 +1,6 @@
 {
   "id": "sample-graph",
   "label": "Sample Social Network",
-  "directed": false,
   "nodes": [
     {
       "id": "alice",

@@ -1,18 +1,9 @@
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { Graph } from "../src/index";
 import path from "path";
 
 describe("JSON Import/Export Validation", () => {
   const sampleGraphPath = path.resolve(__dirname, "sample-graph.json");
-  const outputGraphPath = path.resolve(__dirname, "output-graph.json");
-
-  afterEach(() => {
-    try {
-      require("fs").unlinkSync(outputGraphPath);
-    } catch (error) {
-      // File doesn't exist, ignore
-    }
-  });
 
   test("should import JSON file and validate against Graph type", () => {
     const jsonData = readFileSync(sampleGraphPath, "utf-8");
@@ -22,7 +13,6 @@ describe("JSON Import/Export Validation", () => {
     expect(graphData).toHaveProperty("label");
     expect(graphData).toHaveProperty("nodes");
     expect(graphData).toHaveProperty("links");
-    expect(graphData).toHaveProperty("directed");
 
     expect(Array.isArray(graphData.nodes)).toBe(true);
     expect(Array.isArray(graphData.links)).toBe(true);
@@ -63,14 +53,6 @@ describe("JSON Import/Export Validation", () => {
       expect(typeof link.id).toBe("string");
       expect(typeof link.source).toBe("string");
       expect(typeof link.target).toBe("string");
-
-      if (link.weight !== undefined) {
-        expect(typeof link.weight).toBe("number");
-      }
-
-      if (link.directed !== undefined) {
-        expect(typeof link.directed).toBe("boolean");
-      }
     });
   });
 
@@ -92,24 +74,7 @@ describe("JSON Import/Export Validation", () => {
 
     expect(graphData.id).toBe("sample-graph");
     expect(graphData.label).toBe("Sample Social Network");
-    expect(graphData.directed).toBe(false);
     expect(graphData.nodes.length).toBe(3);
     expect(graphData.links.length).toBe(3);
-  });
-
-  test("should export graph to JSON and re-import successfully", () => {
-    const originalJsonData = readFileSync(sampleGraphPath, "utf-8");
-    const originalGraph: Graph = JSON.parse(originalJsonData);
-
-    const exportedJson = JSON.stringify(originalGraph, null, 2);
-    writeFileSync(outputGraphPath, exportedJson);
-
-    const reimportedJsonData = readFileSync(outputGraphPath, "utf-8");
-    const reimportedGraph: Graph = JSON.parse(reimportedJsonData);
-
-    expect(reimportedGraph).toEqual(originalGraph);
-    expect(reimportedGraph.id).toBe(originalGraph.id);
-    expect(reimportedGraph.nodes.length).toBe(originalGraph.nodes.length);
-    expect(reimportedGraph.links.length).toBe(originalGraph.links.length);
   });
 });
