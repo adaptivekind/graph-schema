@@ -7,13 +7,13 @@
       "properties": {
         "links": {
           "items": {
-            "$ref": "#/definitions/GraphLink"
+            "$ref": "#/definitions/Link"
           },
           "type": "array"
         },
         "nodes": {
           "items": {
-            "$ref": "#/definitions/GraphNode"
+            "$ref": "#/definitions/Node"
           },
           "type": "array"
         }
@@ -21,7 +21,7 @@
       "required": ["nodes", "links"],
       "type": "object"
     },
-    "GraphLink": {
+    "Link": {
       "additionalProperties": false,
       "properties": {
         "id": {
@@ -46,7 +46,20 @@
       "required": ["source", "target"],
       "type": "object"
     },
-    "GraphNode": {
+    "LinkType": {
+      "enum": [
+        "to",
+        "from",
+        "has",
+        "in",
+        "child",
+        "implicit",
+        "implicitFrom",
+        "implicitAlias"
+      ],
+      "type": "string"
+    },
+    "Node": {
       "additionalProperties": false,
       "properties": {
         "aliases": {
@@ -67,19 +80,6 @@
       },
       "required": ["id"],
       "type": "object"
-    },
-    "LinkType": {
-      "enum": [
-        "to",
-        "from",
-        "has",
-        "in",
-        "child",
-        "implicit",
-        "implicitFrom",
-        "implicitAlias"
-      ],
-      "type": "string"
     }
   }
 }

@@ -1,4 +1,4 @@
-export interface GraphNode {
+export interface Node {
   id: string;
   title?: string;
   aliases?: Array<string>;

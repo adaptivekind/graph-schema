@@ -1,7 +1,7 @@
-import { GraphNode } from "./node";
-import { GraphLink } from "./link";
+import { Node } from "./node";
+import { Link } from "./link";
 
 export interface Graph {
-  nodes: GraphNode[];
-  links: GraphLink[];
+  nodes: Node[];
+  links: Link[];
 }
