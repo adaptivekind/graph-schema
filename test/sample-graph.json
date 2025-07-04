@@ -1,0 +1,85 @@
+{
+  "id": "sample-graph",
+  "label": "Sample Social Network",
+  "directed": false,
+  "nodes": [
+    {
+      "id": "alice",
+      "label": "Alice",
+      "data": {
+        "age": 30,
+        "role": "developer"
+      },
+      "position": {
+        "x": 100,
+        "y": 200
+      }
+    },
+    {
+      "id": "bob",
+      "label": "Bob",
+      "data": {
+        "age": 25,
+        "role": "designer"
+      },
+      "position": {
+        "x": 300,
+        "y": 150
+      }
+    },
+    {
+      "id": "charlie",
+      "label": "Charlie",
+      "data": {
+        "age": 35,
+        "role": "manager"
+      },
+      "position": {
+        "x": 200,
+        "y": 350
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "link1",
+      "source": "alice",
+      "target": "bob",
+      "label": "friends",
+      "weight": 0.8,
+      "directed": false,
+      "data": {
+        "since": "2020-01-15"
+      }
+    },
+    {
+      "id": "link2",
+      "source": "bob",
+      "target": "charlie",
+      "label": "colleagues",
+      "weight": 0.6,
+      "directed": false,
+      "data": {
+        "since": "2021-03-10"
+      }
+    },
+    {
+      "id": "link3",
+      "source": "alice",
+      "target": "charlie",
+      "label": "reports_to",
+      "weight": 1.0,
+      "directed": true,
+      "data": {
+        "since": "2019-06-01"
+      }
+    }
+  ],
+  "metadata": {
+    "name": "Sample Network",
+    "description": "A small social network for testing",
+    "version": "1.0.0",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "author": "test-suite"
+  }
+}
