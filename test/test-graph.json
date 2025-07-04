@@ -1,6 +1,4 @@
 {
-  "id": "sample-graph",
-  "label": "Sample Social Network",
   "nodes": [
     {
       "id": "alice",
