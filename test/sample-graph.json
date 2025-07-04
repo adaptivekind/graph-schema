@@ -62,12 +62,5 @@
         "since": "2019-06-01"
       }
     }
-  ],
-  "metadata": {
-    "name": "Sample Network",
-    "description": "A small social network for testing",
-    "version": "1.0.0",
-    "createdAt": "2024-01-01T00:00:00Z",
-    "author": "test-suite"
-  }
+  ]
 }

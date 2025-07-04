@@ -23,7 +23,6 @@ describe("JSON Import/Export Validation", () => {
     expect(graphData).toHaveProperty("nodes");
     expect(graphData).toHaveProperty("links");
     expect(graphData).toHaveProperty("directed");
-    expect(graphData).toHaveProperty("metadata");
 
     expect(Array.isArray(graphData.nodes)).toBe(true);
     expect(Array.isArray(graphData.links)).toBe(true);
@@ -96,7 +95,6 @@ describe("JSON Import/Export Validation", () => {
     expect(graphData.directed).toBe(false);
     expect(graphData.nodes.length).toBe(3);
     expect(graphData.links.length).toBe(3);
-    expect(graphData.metadata?.name).toBe("Sample Network");
   });
 
   test("should export graph to JSON and re-import successfully", () => {
@@ -136,20 +134,14 @@ describe("JSON Import/Export Validation", () => {
     expect(friendshipLink?.data?.since).toBe("2020-01-15");
   });
 
-  test("should validate graph metadata structure", () => {
+  test("should validate basic graph properties", () => {
     const jsonData = readFileSync(sampleGraphPath, "utf-8");
     const graphData = JSON.parse(jsonData);
 
-    expect(graphData.metadata).toHaveProperty("name");
-    expect(graphData.metadata).toHaveProperty("description");
-    expect(graphData.metadata).toHaveProperty("version");
-    expect(graphData.metadata).toHaveProperty("createdAt");
-    expect(graphData.metadata).toHaveProperty("author");
-
-    expect(typeof graphData.metadata.name).toBe("string");
-    expect(typeof graphData.metadata.description).toBe("string");
-    expect(typeof graphData.metadata.version).toBe("string");
-    expect(typeof graphData.metadata.createdAt).toBe("string");
-    expect(typeof graphData.metadata.author).toBe("string");
+    expect(typeof graphData.id).toBe("string");
+    expect(typeof graphData.label).toBe("string");
+    expect(typeof graphData.directed).toBe("boolean");
+    expect(Array.isArray(graphData.nodes)).toBe(true);
+    expect(Array.isArray(graphData.links)).toBe(true);
   });
 });
