@@ -4,6 +4,6 @@ import { Link } from "./link";
 export interface Graph {
   id?: string;
   title?: string;
-  nodes: Node[];
+  nodes: Record<string, Node>;
   links: Link[];
 }

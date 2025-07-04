@@ -28,8 +28,8 @@ The project is organized with TypeScript source files in `src/`:
 
 Key types exported:
 
-- `GraphNode` - Individual graph nodes with optional data and metadata
-- `GraphLink` - Connections between nodes with support for directed/undirected
+- `Node` - Individual graph nodes with optional data and metadata
+- `Link` - Connections between nodes with support for directed/undirected
 - `Graph` - Complete graph structure containing nodes and links
 - Various specialized types for directed/undirected graphs
 

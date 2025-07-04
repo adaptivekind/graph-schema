@@ -15,10 +15,10 @@
           "type": "array"
         },
         "nodes": {
-          "items": {
+          "additionalProperties": {
             "$ref": "#/definitions/Node"
           },
-          "type": "array"
+          "type": "object"
         },
         "title": {
           "type": "string"
@@ -73,9 +73,6 @@
           },
           "type": "array"
         },
-        "id": {
-          "type": "string"
-        },
         "meta": {
           "additionalProperties": {
             "type": "string"
@@ -98,7 +95,6 @@
           "type": "object"
         }
       },
-      "required": ["id"],
       "type": "object"
     }
   }

@@ -1,9 +1,8 @@
 {
   "id": "social-network-graph",
   "title": "Sample Social Network Graph",
-  "nodes": [
-    {
-      "id": "alice",
+  "nodes": {
+    "alice": {
       "aliases": ["another-name", "and-another-name"],
       "title": "Alice",
       "type": "person",
@@ -14,15 +13,13 @@
         "age": "25"
       }
     },
-    {
-      "id": "bob",
+    "bob": {
       "title": "Bob"
     },
-    {
-      "id": "charlie",
+    "charlie": {
       "title": "Charlie"
     }
-  ],
+  },
   "links": [
     {
       "id": "link1",
