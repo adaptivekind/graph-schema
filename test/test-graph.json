@@ -1,7 +1,10 @@
 {
+  "id": "social-network-graph",
+  "title": "Sample Social Network Graph",
   "nodes": [
     {
       "id": "alice",
+      "aliases": ["another-name", "and-another-name"],
       "title": "Alice",
       "type": "person",
       "weights": {

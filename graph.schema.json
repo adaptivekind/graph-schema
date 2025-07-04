@@ -5,6 +5,9 @@
     "Graph": {
       "additionalProperties": false,
       "properties": {
+        "id": {
+          "type": "string"
+        },
         "links": {
           "items": {
             "$ref": "#/definitions/Link"
@@ -16,6 +19,9 @@
             "$ref": "#/definitions/Node"
           },
           "type": "array"
+        },
+        "title": {
+          "type": "string"
         }
       },
       "required": ["nodes", "links"],
