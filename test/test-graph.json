@@ -3,11 +3,12 @@
     {
       "id": "alice",
       "title": "Alice",
+      "type": "person",
       "weights": {
         "value": 2
       },
       "meta": {
-        "type": "person"
+        "age": "25"
       }
     },
     {
@@ -24,11 +25,12 @@
       "id": "link1",
       "source": "alice",
       "target": "bob",
+      "type": "friendship",
       "weights": {
         "value": 2
       },
       "meta": {
-        "type": "friendship"
+        "days": "300"
       }
     },
     {

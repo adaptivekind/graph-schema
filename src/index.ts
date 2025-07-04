@@ -3,5 +3,5 @@ export * from "./link";
 export * from "./graph";
 
 export type { Node as GraphNode } from "./node";
-export type { Link as GraphLink, LinkType } from "./link";
+export type { Link as GraphLink } from "./link";
 export type { Graph } from "./graph";

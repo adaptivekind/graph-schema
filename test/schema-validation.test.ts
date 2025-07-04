@@ -12,6 +12,10 @@ describe("Graph schema validation", () => {
           weights: {
             value: 1,
           },
+          type: "person",
+          meta: {
+            age: "25",
+          },
         },
         {
           id: "name-2",
@@ -21,6 +25,7 @@ describe("Graph schema validation", () => {
         {
           source: "name-1",
           target: "name-2",
+          type: "friendship",
         },
       ],
     };
