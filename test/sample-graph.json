@@ -9,10 +9,6 @@
       "data": {
         "age": 30,
         "role": "developer"
-      },
-      "position": {
-        "x": 100,
-        "y": 200
       }
     },
     {
@@ -21,10 +17,6 @@
       "data": {
         "age": 25,
         "role": "designer"
-      },
-      "position": {
-        "x": 300,
-        "y": 150
       }
     },
     {
@@ -33,10 +25,6 @@
       "data": {
         "age": 35,
         "role": "manager"
-      },
-      "position": {
-        "x": 200,
-        "y": 350
       }
     }
   ],

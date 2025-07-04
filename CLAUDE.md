@@ -27,7 +27,7 @@ The project is organized with TypeScript source files in `src/`:
 - `src/index.ts` - Main export file
 
 Key types exported:
-- `GraphNode` - Individual graph nodes with optional data and positioning
+- `GraphNode` - Individual graph nodes with optional data and metadata
 - `GraphLink` - Connections between nodes with support for directed/undirected
 - `Graph` - Complete graph structure containing nodes and links
 - Various specialized types for directed/undirected graphs

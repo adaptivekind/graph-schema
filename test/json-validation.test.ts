@@ -47,11 +47,8 @@ describe('JSON Import/Export Validation', () => {
         expect(typeof node.data).toBe('object');
       }
       
-      if (node.position) {
-        expect(node.position).toHaveProperty('x');
-        expect(node.position).toHaveProperty('y');
-        expect(typeof node.position.x).toBe('number');
-        expect(typeof node.position.y).toBe('number');
+      if (node.metadata) {
+        expect(typeof node.metadata).toBe('object');
       }
     });
   });
