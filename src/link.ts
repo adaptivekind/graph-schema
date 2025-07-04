@@ -1,4 +1,4 @@
-export interface GraphLink {
+export interface Link {
   id?: string;
   source: string;
   type?: LinkType;
