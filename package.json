@@ -1,6 +1,6 @@
 {
-  "name": "@adpativekind/graph-schema",
-  "version": "0.1",
+  "name": "@adaptivekind/graph-schema",
+  "version": "0.1.0",
   "description": "JSON schema for a graph along with TypeScript types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

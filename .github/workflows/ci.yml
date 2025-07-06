@@ -67,5 +67,5 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # - name: Dry run publish
-      #   run: npm publish --dry-run
+      - name: Dry run publish
+        run: npm publish --dry-run
