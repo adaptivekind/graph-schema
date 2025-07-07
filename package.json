@@ -29,6 +29,7 @@
   "author": "adaptivekind",
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/npm": "^12.0.2",
     "@types/jest": "^29.0.0",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
