@@ -3,10 +3,11 @@
   "version": "0.1.1",
   "description": "JSON schema for a graph along with TypeScript types",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "rollup -c",
+    "dev": "rollup -c --watch",
     "clean": "rm -rf dist",
     "eslint": "eslint",
     "eslint:fix": "eslint",
@@ -17,6 +18,7 @@
     "generate-json-schema": "ts-json-schema-generator --path 'src/*.ts' --type 'Graph' -o graph.schema.json",
     "typecheck": "tsc --noEmit",
     "test": "jest",
+    "test:build": "node test/build/test-build.mjs",
     "test:watch": "jest --watch",
     "prepare": "husky"
   },
@@ -29,6 +31,9 @@
   "author": "adaptivekind",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@semantic-release/npm": "^12.0.2",
     "@types/jest": "^29.0.0",
     "@types/node": "^20.0.0",
@@ -40,6 +45,8 @@
     "jest": "^29.0.0",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
+    "rollup": "^4.44.2",
+    "rollup-plugin-dts": "^6.2.1",
     "ts-jest": "^29.0.0",
     "ts-json-schema-generator": "^2.4.0",
     "typescript": "^5.0.0"

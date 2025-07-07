@@ -39,12 +39,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload coverage reports
-        if: matrix.node-version == '20.x'
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
+      - name: Test build
+        run: npm run test:build
 
   publish-dry-run:
     name: Release
