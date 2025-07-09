@@ -68,43 +68,67 @@ class GraphBuilder implements ChainedGraphBuilder {
   }
 
   // Generate many things in a deterministic way. The same inputs will
-  // consistently give the same set of things.
+  // consistently give the same set of things for a given version
+  // of this library..
   many(
     count: number,
-    options: { linkCount?: number; linkCluster?: number } = {},
+    options: {
+      desiredLinkCount?: number; // Number of links desired
+      linkSpreading?: number; // Linear flattening out of the links to push links to later elements
+      linkWeightingToFirstElement?: number; // Quadratic weighting of links to cluster around the first element
+      scatter?: number; // Scatter points based on this weighting
+    } = {},
   ) {
-    const { linkCluster, linkCount } = {
-      ...{ linkCount: 5, linkCluster: 0.75 },
+    const {
+      linkWeightingToFirstElement,
+      linkSpreading,
+      desiredLinkCount,
+      scatter,
+    } = {
+      ...{
+        desiredLinkCount: count * 1.5,
+        linkWeightingToFirstElement: 0.75,
+        linkSpreading: 2,
+        scatter: 1,
+      },
       ...options,
     };
     const lookup: string[] = [];
     for (let i = 0; i < count; i++) {
       const name = toFakeName(i);
+      this.id(name);
       lookup.push(name);
     }
 
-    // Generate links between things
-    for (let i = 0; i < count; i++) {
-      const metaBuilder = this.id(lookup[i]);
-      let distance = 1;
-      let trigger = linkCluster;
-      let direction = 1;
-      for (let j = 0; j < linkCount; j++) {
-        // Aim for the given the number of links. Clustered around the given
-        // thing
-        let relation = i + distance * direction;
-        while (trigger < 1 && relation > -1 && relation < count) {
-          trigger += linkCluster;
-          distance += 1;
-          direction *= -1;
-          relation = i + distance * direction;
-        }
-        trigger -= 1;
-        if (relation > -1 && relation < count) {
-          metaBuilder.to(lookup[relation]);
+    // The following algorithm is a deterministic distribution of
+    // links which will give useful graphs for testing purposes.
+    const scattering = [0.2, 0.1, 0, 0.5, 0.3, 0.8, 0, 0, 0.6, 0.9];
+    var linksAdded = 0;
+    var density = linkWeightingToFirstElement;
+    var linksToAdd: number[] = [];
+    outer: for (let i = 0; i < count; i++) {
+      var needle = 0;
+      for (let j = 0; j < count; j++) {
+        const linkNumber = i * count + j;
+        const scatterOffset = scatter * scattering[linkNumber % 10];
+        needle += density + scatterOffset;
+        // i!=j since we don't want to link to self
+        if (i != j && needle > linkSpreading) {
+          linksToAdd.push(linkNumber);
+          linksAdded += 1;
+          needle = 0;
+          if (linksAdded >= desiredLinkCount) {
+            break outer;
+          }
         }
       }
+      density *= linkWeightingToFirstElement;
     }
+
+    linksToAdd.forEach((i: number) => {
+      const metaBuilder = this.id(lookup[Math.floor(i / count)]);
+      metaBuilder.to(lookup[i % count]);
+    });
 
     return this;
   }

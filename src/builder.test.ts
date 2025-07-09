@@ -31,4 +31,10 @@ describe("factor", () => {
     const graph = builder().many(50).build();
     expect(Object.keys(graph.nodes)).toHaveLength(50);
   });
+
+  it("should create many items with default number of links", () => {
+    const graph = builder().many(10).build();
+    expect(Object.keys(graph.nodes)).toHaveLength(10);
+    expect(Object.keys(graph.links)).toHaveLength(15);
+  });
 });
