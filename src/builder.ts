@@ -1,5 +1,5 @@
 import { toFakeName } from "./fake";
-import { Graph } from ".";
+import { Graph } from "./types";
 
 interface ChainedGraphBuilder {
   build: () => Graph;

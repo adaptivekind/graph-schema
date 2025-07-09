@@ -1,5 +1,5 @@
 import { builder } from "./builder";
-import { Link } from "./link";
+import { Link } from "./types";
 
 const byTarget = (target: string) => (link: Link) => link.target === target;
 

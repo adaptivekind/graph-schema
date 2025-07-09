@@ -15,7 +15,7 @@
     "lint:fix": "npm run prettier:fix && npm run eslint:fix",
     "prettier": "npx prettier --check .",
     "prettier:fix": "npx prettier --write .",
-    "generate-json-schema": "ts-json-schema-generator --path 'src/*.ts' --type 'Graph' -o graph.schema.json",
+    "generate-json-schema": "ts-json-schema-generator --path 'src/types.ts' -o graph.schema.json",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:build": "node test/build/test-build.mjs",
