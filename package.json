@@ -6,7 +6,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c  --failAfterWarnings",
     "dev": "rollup -c --watch",
     "clean": "rm -rf dist",
     "eslint": "eslint",

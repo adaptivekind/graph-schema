@@ -17,6 +17,12 @@ export default [
         format: "esm",
         sourcemap: true,
       },
+      {
+        file: "dist/index.js",
+        format: "umd",
+        name: "graphSchema",
+        sourcemap: true,
+      },
     ],
     plugins: [
       resolve({
