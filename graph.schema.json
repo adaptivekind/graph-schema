@@ -26,10 +26,7 @@
           "type": "object"
         }
       },
-      "required": [
-        "links",
-        "nodes"
-      ],
+      "required": ["links", "nodes"],
       "type": "object"
     },
     "Link": {
@@ -66,10 +63,7 @@
           "type": "object"
         }
       },
-      "required": [
-        "source",
-        "target"
-      ],
+      "required": ["source", "target"],
       "type": "object"
     },
     "Node": {
