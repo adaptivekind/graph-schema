@@ -6,9 +6,7 @@ TypeScript types and JSON schema for representing [graphs](https://en.wikipedia.
 
 - **TypeScript-first**: Strongly typed interfaces for graph structures
 - **JSON Schema**: Generated schema for validation
-- **Efficient Node Storage**: Nodes stored as a map with ID as key for O(1) lookup
 - **Flexible Metadata**: Support for custom data, weights, and metadata on nodes and links
-- **Comprehensive Testing**: Full test coverage with JSON validation
 
 ## Installation
 
@@ -132,32 +130,13 @@ The project includes comprehensive tests that validate:
 - Node and link structure validation
 - Reference integrity (all links point to existing nodes)
 
-### Project Structure
-
-```
-src/
-├── node.ts      # Node interface definition
-├── link.ts      # Link interface definition
-├── graph.ts     # Graph interface definition
-└── index.ts     # Main exports
-
-test/
-├── schema-validation.test.ts  # Main test suite
-├── test-graph.json           # Sample graph data
-└── output-graph.json         # Generated during tests
-
-graph.schema.json             # Generated JSON schema
-```
-
 ## Design Decisions
 
 ### Node Storage as Map
 
 Nodes are stored as `Record<string, Node>` rather than `Node[]` for several benefits:
 
-- **O(1) lookup** by ID instead of O(n) array search
 - **No duplicate IDs** - object keys are naturally unique
-- **Cleaner API** - access nodes directly by ID
 - **No redundant ID storage** - the map key serves as the node ID
 
 ### Flexible Typing
