@@ -1,9 +1,10 @@
+if [ "graph.schema.json" -ot "src/types.ts" ]; then
+  npm run generate-json-schema
+  git add graph.schema.json
+fi
+
 npx lint-staged
 npm test
 npm run build
 npm run test:build
 
-if [ "graph.schema.json" -ot "src/types.ts" ]; then
-  npm run generate-json-schema
-  git add graph.schema.json
-fi
