@@ -28,7 +28,7 @@
     "typescript",
     "json-schema"
   ],
-  "author": "adaptivekind",
+  "author": "Ian Homer",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
