@@ -14,7 +14,6 @@ export const toFakeName = (
   return index
     .toString(radix)
     .split("")
-    .reverse()
     .map((i) => words[parseInt(i)])
     .join("-");
 };
